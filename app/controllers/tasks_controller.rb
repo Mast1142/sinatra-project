@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
   get '/tasks' do #index
     if logged_in?
-      @tasks = Task.all
+      @tasks = Task.all.select do |task|
+        task.user_id == current_user.id
+      end
       erb :"tasks/index"
     else
       redirect '/login'
