@@ -1,3 +1,6 @@
+User.destroy_all
+Task.destroy_all
+
 User.create(
   username: "Sam",
   email: "sam@gmail.com",
@@ -5,9 +8,8 @@ User.create(
 )
 
 3.times do |index|
-  Model.create(
+  Task.create(
     context: "#{index}",
-    number: 123,
     user_id: 1
   )
 end

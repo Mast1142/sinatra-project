@@ -1,0 +1,15 @@
+<h1>Show page</h1>
+
+<h3>Welcome!</h3>
+
+<%=@task.content%>
+<br/>
+<a href="/tasks/<%=@task.id%>/edit"> Edit Task </a>
+<br/>
+<form action="/tasks/<%=@task.id%>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Task">
+</form>
+<a href="/tasks"> Home </a>
+<br/>
+<a href="/tasks"> Complete </a>

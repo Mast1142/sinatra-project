@@ -1,0 +1,7 @@
+<h1> User Show Page </h2>
+
+<ul>
+  <% @user.tasks.each do |task| %>
+    <li> <%=task.content%></li>
+    <%end%>
+</ul>
