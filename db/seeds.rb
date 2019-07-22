@@ -9,7 +9,7 @@ User.create(
 
 3.times do |index|
   Task.create(
-    context: "#{index}",
+    content: "#{index}",
     user_id: 1
   )
 end
