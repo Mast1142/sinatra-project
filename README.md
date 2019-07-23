@@ -1,8 +1,29 @@
-SINATRA CONTENT MANAGEMENT SYSTEM APP
+# sinatra-project
 
-1. cd sinatra-project
-#Change directory to the project file.
-2. bundle install
-#Make sure all gems are installed
-3. shotgun
-#To start and use the site.
+Welcome to my sinatra-project!
+Make sure to change directory to sinatra-project with 'cd sinatra-project' in your terminal.
+We also want to make sure to run 'bundle install'.
+Run shotgun to start and use the site.
+
+## Usage
+
+Signup with a username, password and a valid email address to get started. You can create, edit/complete and delete a task.
+
+## Development
+
+After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/'mast1142'/sinatra-project. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the sinatra-project project’s codebases, issue trackers, chat rooms and mailing lists is expecsinatra-project to follow the [code of conduct](https://github.com/'mast'/sinatra-project/blob/master/CODE_OF_CONDUCT.md).
+# sinatra-project
