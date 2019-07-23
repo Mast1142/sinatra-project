@@ -8,13 +8,14 @@ class UsersController < ApplicationController
   end
 
   post "/signup" do
-    if params[:username] != "" && params[:email] != "" && params[:password] != ""
-      validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+    if params[:username] != "" && params[:email] != "" && !!(params[:email]=~ VALID_EMAIL_REGEX) && params[:password] != ""
       @user = User.new(params)
       @user.save
       session[:user_id] = @user.id
       redirect "/tasks"
     else
+      @error = "Username & Password cannot be blank. A valid email is required for signup."
       redirect "/signup"
     end
   end
