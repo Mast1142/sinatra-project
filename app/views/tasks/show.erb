@@ -4,12 +4,13 @@
 
 <%=@task.content%>
 <br/>
-<a href="/tasks/<%=@task.id%>/edit"> Edit Task </a>
+<button onclick="window.location.href='/tasks/<%=@task.id%>/edit';">Edit Task</button>
 <br/>
 <form action="/tasks/<%=@task.id%>/delete" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete Task">
 </form>
-<a href="/tasks"> Home </a>
+<button onclick="window.location.href='/tasks';">Complete Task</button>
 <br/>
-<a href="/tasks"> Complete </a>
+<button onclick="window.location.href='/tasks';">Home</button>
+<br/>
