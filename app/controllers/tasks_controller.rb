@@ -2,7 +2,10 @@ class TasksController < ApplicationController
   get '/tasks' do #index
     if logged_in?
       @tasks = Task.all.select do |task|
-        task.user_id == current_user.id
+        task.user_id == current_user.id && task.completed == false
+      end
+      @completed = Task.all.select do |task|
+        task.user_id == current_user.id && task.completed == true
       end
       erb :"tasks/index"
     else
@@ -22,8 +25,9 @@ class TasksController < ApplicationController
     if params[:content] != ""
       @task = Task.new(params)
       @task.user = current_user
+      @task.completed = false
       @task.save
-      redirect "/tasks/#{@task.id}"
+      redirect "/tasks"
     else
       redirect "/tasks/new"
     end
@@ -53,7 +57,7 @@ class TasksController < ApplicationController
     @task = Task.find_by_id(params[:id])
     if params[:content] != ''
       @task.update(content: params[:content])
-      redirect "/tasks/#{@task.id}"
+      redirect "/tasks"
     else
       redirect "/tasks/#{@task.id}/edit"
     end
@@ -69,5 +73,14 @@ class TasksController < ApplicationController
     else
       redirect "/login"
     end
+  end
+
+  patch '/tasks/:id/completed' do #patch edit
+    @task = Task.find_by_id(params[:id])
+    if @task && @task.user == current_user
+      @task.completed = true
+      @task.save
+    end
+    redirect "/tasks"
   end
 end

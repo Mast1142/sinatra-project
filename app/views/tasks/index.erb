@@ -6,11 +6,19 @@
 
 <ul>
   <%@tasks.each do |task|%>
-    <li><a href="/tasks/<%=task.id%>"><input type="checkbox" name="user[task_ids][]" id="<%=task.id%>" value="<%=task.id%>">
-    <%=task.content%></input></a></li>
+    <li><a href="/tasks/<%=task.id%>">
+    <%=task.content%></a></li>
     <%end%>
 </ul>
+<br/>
+<p>Completed:</p>
+  <%@completed.each do |task|%>
+    <li><a href="/tasks/<%=task.id%>">
+    <%=task.content%></a></li>
+    <%end%>
+<ul>
 
+</ul>
 <br/>
 <button onclick="window.location.href='/tasks/new';">New Task</button>
 <br/>

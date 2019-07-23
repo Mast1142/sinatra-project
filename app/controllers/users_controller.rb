@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   post "/signup" do
     if params[:username] != "" && params[:email] != "" && params[:password] != ""
+      validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
       @user = User.new(params)
       @user.save
       session[:user_id] = @user.id
